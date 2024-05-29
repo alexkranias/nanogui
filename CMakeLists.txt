@@ -557,23 +557,23 @@ elseif(MSVC)
   set_source_files_properties(ext/nanovg/src/nanovg.c PROPERTIES COMPILE_FLAGS "/wd4005 /wd4456 /wd4457")
 endif()
 
-# Build example application if desired
-if (NANOGUI_BUILD_EXAMPLES)
-  add_executable(example1      src/example1.cpp)
-  add_executable(example2      src/example2.cpp)
-  add_executable(example3      src/example3.cpp)
-  add_executable(example4      src/example4.cpp)
-  add_executable(example_icons src/example_icons.cpp)
+# # Build example application if desired
+# if (NANOGUI_BUILD_EXAMPLES)
+#   add_executable(example1      src/example1.cpp)
+#   add_executable(example2      src/example2.cpp)
+#   add_executable(example3      src/example3.cpp)
+#   add_executable(example4      src/example4.cpp)
+#   add_executable(example_icons src/example_icons.cpp)
 
-  target_link_libraries(example1      nanogui)
-  target_link_libraries(example2      nanogui)
-  target_link_libraries(example3      nanogui ${NANOGUI_LIBS}) # For OpenGL
-  target_link_libraries(example4      nanogui)
-  target_link_libraries(example_icons nanogui)
+#   target_link_libraries(example1      nanogui)
+#   target_link_libraries(example2      nanogui)
+#   target_link_libraries(example3      nanogui ${NANOGUI_LIBS}) # For OpenGL
+#   target_link_libraries(example4      nanogui)
+#   target_link_libraries(example_icons nanogui)
 
-  # Copy icons for example application
-  file(COPY resources/icons DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
-endif()
+#   # Copy icons for example application
+#   file(COPY resources/icons DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+# endif()
 
 if (NANOGUI_BUILD_PYTHON)
   message(STATUS "NanoGUI: building the Python plugin.")
